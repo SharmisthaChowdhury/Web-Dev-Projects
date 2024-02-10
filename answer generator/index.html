@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer generator</title>
+</head>
+
+<body>
+    <div id="container">
+        <input type="text" id="question" placeholder="Enter your question">
+        <button type="button" onclick="askQuestion();">Ask</button>
+    </div>
+
+    <script>
+        const chatContainer = document.getElementById('container');
+
+        function askQuestion() {
+            const userInput = document.getElementById('question').value;
+            const userQuestion = document.createElement('p');
+            const userAnswer = document.createElement('p');
+
+            userQuestion.innerHTML = `<b>YOU:</b>: ${userInput}`;
+            chatContainer.appendChild(userQuestion);
+
+            const answers = {
+                "What is your name?": "My name is AI Bot.",
+                "How are you?": "I'm just a computer program, so I don't have feelings, but thanks for asking!",
+                "What is the meaning of life?": "The meaning of life is subjective and varies for each individual.",
+            };
+
+            const answerElement = document.createElement('p');
+
+            if (answers.hasOwnProperty(userInput)) {
+                const answer = answers[userInput];
+                answerElement.innerHTML = `<b>AI Bot:</b> ${answer}`;
+            } else {
+                answerElement.innerHTML = "<b>AI Bot:</b> I'm sorry, I don't have an answer for that question.";
+            }
+
+            chatContainer.appendChild(answerElement);
+            document.getElementById('question').value = '';
+        }
+    </script>
+</body>
+
+</html>
