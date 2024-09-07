@@ -46,7 +46,13 @@ Generates responses to your questions with predefined answers.
   - Real-time response generation
   - Interactive chat interface
   - CSS3-styled responsive design
-
+  - 
+## Project 5: Knockout Quiz
+A fun quiz game that tests your knowledge with multiple questions.
+- **Features:** 
+  - Interactive quiz with multiple questions
+  - Responsive and modern CSS3 design
+  - Personalized greeting based on user input
 
 ## Getting Started
 
