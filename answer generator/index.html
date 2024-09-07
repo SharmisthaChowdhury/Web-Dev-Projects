@@ -1,79 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Answer Generator</title>
     <style>
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #bed3d6, #14888e);
+            color: #333;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
+        /* Container Styling */
         #container {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
+            background: #a78d6b;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 600px;
+            padding: 100px;
+            text-align: center;
+        }
+
+        /* Input Field Styling */
+        #container input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 12px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #010b15;
+            margin-bottom: 15px;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
 
-        input[type="text"] {
-            width: calc(100% - 70px);
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-bottom: 10px;
+        #container input[type="text"]:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 8px rgba(108, 4, 44, 0.3);
+            outline: none;
         }
 
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
+        /* Button Styling */
+        #container button {
+            background-color: #2d0558;
             color: #fff;
             border: none;
-            border-radius: 4px;
+            padding: 12px 24px;
+            border-radius: 8px;
             cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
-        button:hover {
-            background-color: #0056b3;
+        #container button:hover {
+            background-color: #54088d;
         }
 
-        p {
+        #container button:active {
+            transform: scale(0.98);
+        }
+
+        /* Chat Styling */
+        #chat {
+            text-align: left;
+            margin-top: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        #chat p {
             margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
         }
 
-        b {
-            color: #007bff;
+        #chat p:nth-child(odd) {
+            background: #e9f7fe;
+        }
+
+        #chat p:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            #container {
+                padding: 20px;
+            }
+
+            #container input[type="text"] {
+                width: calc(100% - 20px);
+            }
+
+            #container button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
-
 <body>
     <div id="container">
         <input type="text" id="question" placeholder="Enter your question">
         <button type="button" onclick="askQuestion();">Ask</button>
+        <button type="button" onclick="refreshChat();">Refresh Chat</button>
+        <div id="chat"></div>
     </div>
 
     <script>
-        const chatContainer = document.getElementById('container');
+        const chatContainer = document.getElementById('chat');
 
         function askQuestion() {
             const userInput = document.getElementById('question').value;
+            if (userInput.trim() === "") return; // Skip empty input
+
             const userQuestion = document.createElement('p');
             const userAnswer = document.createElement('p');
 
-            userQuestion.innerHTML = `<b>YOU:</b>: ${userInput}`;
+            userQuestion.innerHTML = `<b>YOU:</b> ${userInput}`;
             chatContainer.appendChild(userQuestion);
 
             const answers = {
                 "What is your name?": "My name is AI Bot.",
                 "How are you?": "I'm just a computer program, so I don't have feelings, but thanks for asking!",
                 "What is the meaning of life?": "The meaning of life is subjective and varies for each individual.",
+                "What is the capital of France?": "The capital of France is Paris.",
+                "Who wrote 'To Kill a Mockingbird'?": "Harper Lee wrote 'To Kill a Mockingbird'.",
+                "What is 2 + 2?": "2 + 2 equals 4.",
+                "What is your purpose?": "My purpose is to assist and provide information.",
+                "Who was the first president of the United States?": "The first president of the United States was George Washington.",
+                "What is the speed of light?": "The speed of light is approximately 299,792 kilometers per second.",
+                "Who discovered gravity?": "Sir Isaac Newton is credited with discovering gravity.",
+                "What is the tallest mountain in the world?": "Mount Everest is the tallest mountain in the world.",
+                "What is the largest ocean on Earth?": "The Pacific Ocean is the largest ocean on Earth.",
+                "What is the formula for water?": "The chemical formula for water is H2O.",
+                "Who painted the Mona Lisa?": "The Mona Lisa was painted by Leonardo da Vinci."
             };
 
             const answerElement = document.createElement('p');
@@ -88,7 +156,11 @@
             chatContainer.appendChild(answerElement);
             document.getElementById('question').value = '';
         }
+
+        function refreshChat() {
+            chatContainer.innerHTML = ''; // Clear the chat
+            document.getElementById('question').value = ''; // Clear the input field
+        }
     </script>
 </body>
-
 </html>
