@@ -12,7 +12,7 @@ Welcome to my Web Development Projects repository! This collection showcases var
 
 A responsive personal portfolio website showcasing my skills, projects, and contact information. This project emphasizes clean design and mobile-friendly layouts.
 
-- **Live Demo:** [View Project](#) 
+- **Live Demo:** [View Project](https://sharmisthachowdhury.github.io/PORTFOLIO/) 
 - **Features:** 
   - Responsive design using CSS Flexbox and Grid
   - Smooth scrolling navigation
