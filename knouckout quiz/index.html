@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knockout Quiz</title>
+    <style>
+        body {
+            font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #027971d6);
+            color: #1f0303;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            color: #030c2bc3;
+            margin: 0;
+            padding: 20px;
+            font-size: 2.5em;
+            font-weight: 600;
+            border-bottom: 4px solid #113053;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            transition: transform 0.3s ease;
+        }
+
+        form:hover {
+            transform: scale(1.02);
+        }
+
+        .info-section, .quiz-section {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #02d1d1af;
+            box-shadow: 0 0 8px rgba(2, 136, 209, 0.5);
+            outline: none;
+        }
+
+        button {
+            background: #022f48;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: #0277bd;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .info-section p, .quiz-section p {
+            margin: 12px 0;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>KNOCKOUT QUIZ</h1>
+    <form name="info">
+        <div class="info-section">
+            <label for="n1">Name:</label>
+            <input type="text" id="n1" name="n1" placeholder="Enter your name">
+            <label for="n2">Stream:</label>
+            <input type="text" id="n2" name="n2" placeholder="Enter your stream">
+            <label for="n3">Age:</label>
+            <input type="text" id="n3" name="n3" placeholder="Enter your age">
+            <button type="button" onclick="greeting();">Submit</button>
+        </div>
+        <div class="quiz-section">
+            <p>Do you want to enter the quiz?</p>
+            <button type="button" onclick="quiz();">Yes</button>
+            <!-- <button type="button">No</button> -->
+        </div>
+    </form>
+
+    <script>
+        let name = '';
+        let count = 0;
+
+        function greeting() {
+            name = document.info.n1.value;
+            const stream = document.info.n2.value;
+            const age = document.info.n3.value;
+            alert(`Hello ${name} (${age}) from ${stream}. Welcome to my page`);
+        }
+
+        function quiz() {
+            count = 0; // Reset count for a new quiz
+            let q1 = prompt("3 + 2 =", "?");
+            if (q1 == 5) {
+                count++;
+                alert("Correct answer! Score: " + count);
+
+                let q2 = prompt("What is the capital of India?", "?");
+                if (q2.toLowerCase() === "delhi") {
+                    count++;
+                    alert("Correct answer! Score: " + count);
+
+                    let q3 = prompt("What is the national sport of India?", "?");
+                    if (q3.toLowerCase() === "hockey") {
+                        count++;
+                        alert("Correct answer! Score: " + count);
+
+                        let q4 = prompt("What is the largest continent by area?", "?");
+                        if (q4.toLowerCase() === "asia") {
+                            count++;
+                            alert("Correct answer! Score: " + count);
+
+                            let q5 = prompt("Who wrote 'To Kill a Mockingbird'?", "?");
+                            if (q5.toLowerCase() === "harper lee") {
+                                count++;
+                                alert("Correct answer! Score: " + count);
+
+                                alert(`Congratulations ${name}! Quiz completed. Final score is ${count}`);
+                            } else {
+                                alert("Wrong answer! Final score is " + count);
+                            }
+                        } else {
+                            alert("Wrong answer! Final score is " + count);
+                        }
+                    } else {
+                        alert("Wrong answer! Final score is " + count);
+                    }
+                } else {
+                    alert("Wrong answer! Final score is " + count);
+                }
+            } else {
+                alert("Wrong answer! Final score is " + count);
+            }
+        }
+    </script>
+</body>
+
+</html>
