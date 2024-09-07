@@ -43,9 +43,9 @@ A simple and fun Rock Paper Scissors game where the user can play against the co
 ## Project 4: Answer Generator
 Generates responses to your questions with predefined answers.
 - **Features:** 
-- Real-time response generation
-- Interactive chat interface
-- CSS3-styled responsive design
+  - Real-time response generation
+  - Interactive chat interface
+  - CSS3-styled responsive design
 
 
 ## Getting Started
