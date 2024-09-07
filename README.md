@@ -33,7 +33,8 @@ A web app that allows users to generate QR codes for any text or URL. The QR cod
 
 A simple and fun Rock Paper Scissors game where the user can play against the computer. The game tracks the score and provides real-time feedback.
 
-- **Live Demo:** [View Project](#) 
+- **Live Demo:** [View Project](https://sharmisthachowdhury.github.io/Rock-Paper-Scissor-Game/)
+- **Features:** 
 - **Features:** 
   - Random move generation for the computer
   - Score tracking and result display
