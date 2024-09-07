@@ -50,9 +50,9 @@ To run any of these projects locally, follow these steps:
 
 
 ## Technologies
--**HTML5**: For structuring the web pages.
--**CSS3**: For styling and layout, including Flexbox and Grid.
--**JavaScript**: For interactivity and dynamic content.
+- **HTML5**: For structuring the web pages.
+- **CSS3**: For styling and layout, including Flexbox and Grid.
+- **JavaScript**: For interactivity and dynamic content.
 
 ## Contributing
 Contributions are welcome! Please submit a pull request or open an issue for any bugs or enhancements.
