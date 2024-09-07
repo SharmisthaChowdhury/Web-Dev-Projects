@@ -7,6 +7,8 @@ Welcome to my Web Development Projects repository! This collection showcases var
 - [Project 1: Personal Portfolio](#project-1-personal-portfolio)
 - [Project 2: QR Code Generator](#project-3=2-qr-code-generator)
 - [Project 3: Rock-Paper-Scissors Game](#project-3-Rock-Paper-Scissors-Game)
+- [Project 4: Answer Generator](#project-4-Answer-Generator)
+- [Project 5: Knockout Quiz](#project-5-Knockout-Quiz)
 
 ## Project 1: Personal Portfolio
 
@@ -34,10 +36,17 @@ A simple and fun Rock Paper Scissors game where the user can play against the co
 
 - **Live Demo:** [View Project](https://sharmisthachowdhury.github.io/Rock-Paper-Scissor-Game/)
 - **Features:** 
-- **Features:** 
   - Random move generation for the computer
   - Score tracking and result display
   - Interactive UI with animations
+  - 
+## Project 4: Answer Generator
+Generates responses to your questions with predefined answers.
+- **Features:** 
+- Real-time response generation
+-Interactive chat interface
+-CSS3-styled responsive design
+
 
 ## Getting Started
 
