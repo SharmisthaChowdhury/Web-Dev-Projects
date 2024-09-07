@@ -23,7 +23,6 @@ A responsive personal portfolio website showcasing my skills, projects, and cont
 
 A web app that allows users to generate QR codes for any text or URL. The QR code can be downloaded and used anywhere.
 
-- **Live Demo:** [View Project](#) 
 - **Features:** 
   - Real-time QR code generation
   - Downloadable QR code image
