@@ -41,8 +41,8 @@ A simple and fun Rock Paper Scissors game where the user can play against the co
 
 ## Getting Started
 
-To run any of these projects locally, follow these steps:
+To run any of these projects locally, follow these steps:  
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YourUsername/YourRepoName.git
+   git clone [https://github.com/SharmisthaChowdhury/Web-Dev-Projects.git]
